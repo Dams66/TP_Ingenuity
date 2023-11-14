@@ -23,7 +23,7 @@ def input_callback(iop_type, name, value_type, value, my_data):
 
         #Récupération des coordonnées libres
         argument_list = (url,)
-        igs.service_call("GestionCoordonnes", "placeLibre", argument_list, "")
+        igs.service_call("GestionCoordonnes", "addImageToTab", argument_list, "")
 
 def input_callback_2(iop_type, name, value_type, value, my_data):
     global apiKey

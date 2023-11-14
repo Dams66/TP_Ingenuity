@@ -418,7 +418,13 @@
                     {
                         "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
                         "hostname": "Dams",
-                        "ipAddress": "172.17.55.171",
+                        "ipAddress": "192.168.1.60",
+                        "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
+                        "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
+                        "hostname": "Dams",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
@@ -435,9 +441,9 @@
                 "view": {
                     "height": 40,
                     "isCollapsed": false,
-                    "positionX": 938,
-                    "positionY": 101,
-                    "positionZ": 4.479999999999948,
+                    "positionX": 922,
+                    "positionY": 40,
+                    "positionZ": 4.699999999999943,
                     "width": 252
                 }
             },
@@ -496,16 +502,16 @@
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Stable API\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "172.17.55.171",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     }
                 ],
                 "view": {
                     "height": 40,
                     "isCollapsed": false,
-                    "positionX": 1439,
-                    "positionY": 15,
-                    "positionZ": 4.239999999999953,
+                    "positionX": 1323,
+                    "positionY": 36,
+                    "positionZ": 4.759999999999942,
                     "width": 252
                 }
             },
@@ -547,6 +553,20 @@
                                     "name": "send_x_y"
                                 }
                             ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "url",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "addImageToTab"
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "displayAll"
                         }
                     ],
                     "version": "1.0"
@@ -554,18 +574,18 @@
                 "identity": "GestionCoordonnes",
                 "instances": [
                     {
-                        "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Stable API\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
+                        "commandLine": "\"C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe\" --port 0 --name GestionCoordonnes",
                         "hostname": "Dams",
-                        "ipAddress": "172.17.55.171",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     }
                 ],
                 "view": {
                     "height": 40,
-                    "isCollapsed": true,
-                    "positionX": 1436,
-                    "positionY": 179,
-                    "positionZ": 4.629999999999945,
+                    "isCollapsed": false,
+                    "positionX": 1342,
+                    "positionY": 371,
+                    "positionZ": 4.939999999999938,
                     "width": 252
                 }
             },
@@ -584,18 +604,29 @@
                     "parameters": [
                     ],
                     "services": [
+                        {
+                            "arguments": [
+                            ],
+                            "name": "refreshImg"
+                        }
                     ],
                     "version": "1.0"
                 },
                 "identity": "GestionTemporelle",
                 "instances": [
+                    {
+                        "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Stable API\\GestionTemporelle\\main.py GestionTemporelle Wi-Fi 5670",
+                        "hostname": "Dams",
+                        "ipAddress": "192.168.1.60",
+                        "mac": "DC:46:28:64:AE:1F"
+                    }
                 ],
                 "view": {
                     "height": 40,
                     "isCollapsed": true,
-                    "positionX": 1436,
-                    "positionY": 316,
-                    "positionZ": 4.619999999999945,
+                    "positionX": 1364,
+                    "positionY": 509,
+                    "positionZ": 4.949999999999938,
                     "width": 252
                 }
             }
@@ -666,9 +697,9 @@
                 "view": {
                     "height": 52,
                     "isCollapsed": false,
-                    "positionX": 489,
-                    "positionY": 107,
-                    "positionZ": 4.5499999999999465,
+                    "positionX": 471,
+                    "positionY": 43,
+                    "positionZ": 4.969999999999938,
                     "width": 256
                 }
             },
@@ -707,9 +738,9 @@
                 "view": {
                     "height": 137,
                     "isCollapsed": false,
-                    "positionX": 908,
-                    "positionY": -137,
-                    "positionZ": 4.539999999999947,
+                    "positionX": 910,
+                    "positionY": 237,
+                    "positionZ": 4.959999999999938,
                     "width": 286
                 }
             },
@@ -742,9 +773,9 @@
                 "view": {
                     "height": 156,
                     "isCollapsed": false,
-                    "positionX": 1859,
-                    "positionY": 50,
-                    "positionZ": 4.39999999999995,
+                    "positionX": 1758,
+                    "positionY": 15,
+                    "positionZ": 4.8799999999999395,
                     "width": 254
                 }
             }

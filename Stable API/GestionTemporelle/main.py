@@ -7,8 +7,16 @@
 #  Created by Ingenuity i/o on 2023/11/14
 #
 
+
 import sys
 import ingescape as igs
+import time
+
+timeBetweenRefresh = 0.01
+
+def service_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
+    time.sleep(timeBetweenRefresh)
+    igs.service_call("GestionCoordonnes", "displayAll", (), "")
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
@@ -24,6 +32,8 @@ if __name__ == "__main__":
     igs.log_set_console(True)
     igs.log_set_file(True, None)
     igs.set_command_line(sys.executable + " " + " ".join(sys.argv))
+
+    igs.service_init("refreshImg", service_callback, None)
 
     igs.start_with_device(sys.argv[2], int(sys.argv[3]))
 
