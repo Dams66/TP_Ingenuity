@@ -516,11 +516,6 @@
                     "description": "",
                     "family": "",
                     "inputs": [
-                        {
-                            "description": "",
-                            "name": "lastAction",
-                            "type": "STRING"
-                        }
                     ],
                     "isDynamic": false,
                     "name": "GestionCoordonnes",
@@ -567,10 +562,40 @@
                 ],
                 "view": {
                     "height": 40,
-                    "isCollapsed": false,
-                    "positionX": 1434,
-                    "positionY": 198,
-                    "positionZ": 4.519999999999947,
+                    "isCollapsed": true,
+                    "positionX": 1436,
+                    "positionY": 179,
+                    "positionZ": 4.629999999999945,
+                    "width": 252
+                }
+            },
+            {
+                "data": {
+                },
+                "definition": {
+                    "description": "",
+                    "family": "",
+                    "inputs": [
+                    ],
+                    "isDynamic": false,
+                    "name": "GestionTemporelle",
+                    "outputs": [
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": "1.0"
+                },
+                "identity": "GestionTemporelle",
+                "instances": [
+                ],
+                "view": {
+                    "height": 40,
+                    "isCollapsed": true,
+                    "positionX": 1436,
+                    "positionY": 316,
+                    "positionZ": 4.619999999999945,
                     "width": 252
                 }
             }
@@ -595,22 +620,10 @@
                 "toOutput": "value"
             },
             {
-                "fromAgent": "GestionCoordonnes",
-                "fromInput": "lastAction",
-                "toAgent": "Whiteboard",
-                "toOutput": "lastAction"
-            },
-            {
                 "fromAgent": "65cd0f6e-02bd-4ee0-9f8e-796f2df531ae",
                 "fromInput": "wildcard",
                 "toAgent": "StableDiffusion",
                 "toOutput": "url-image"
-            },
-            {
-                "fromAgent": "ae8b7bc5-aa10-47ad-8ba3-d5b292d02b52",
-                "fromInput": "wildcard",
-                "toAgent": "Whiteboard",
-                "toOutput": "lastAction"
             }
         ],
         "splits": [
@@ -733,41 +746,6 @@
                     "positionY": 50,
                     "positionZ": 4.39999999999995,
                     "width": 254
-                }
-            },
-            {
-                "data": {
-                },
-                "definition": {
-                    "description": "",
-                    "family": "7fc274c8-b06e-429b-9d09-d14878381016",
-                    "inputs": [
-                        {
-                            "description": "",
-                            "name": "wildcard",
-                            "type": "WILDCARD_SINGLE_MAPPING"
-                        }
-                    ],
-                    "isDynamic": false,
-                    "name": "",
-                    "outputs": [
-                    ],
-                    "parameters": [
-                    ],
-                    "services": [
-                    ],
-                    "version": ""
-                },
-                "identity": "ae8b7bc5-aa10-47ad-8ba3-d5b292d02b52",
-                "instances": [
-                ],
-                "view": {
-                    "height": 99,
-                    "isCollapsed": false,
-                    "positionX": 1426,
-                    "positionY": 344,
-                    "positionZ": 4.529999999999947,
-                    "width": 402
                 }
             }
         ]

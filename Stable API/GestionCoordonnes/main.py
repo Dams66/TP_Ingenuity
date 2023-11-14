@@ -7,29 +7,26 @@
 #  Created by Ingenuity i/o on 2023/10/20
 #
 
+from Image import Image
+from TabImages import TabImages
 import sys
+import time
 import ingescape as igs
 
-image_width = 350.0
-image_height = 350.0
-tab_length = 1200.0
-tab_height = 900.0
-spacing_h = 10.0
-spacing_v = 10.0
-
-gestionTableau = []
-
-
-def input_callback(iop_type, name, value_type, value, my_data):
-    if value == "":
-        gestionTableau.clear()
+gestionTableau = TabImages()
 
 def service_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
+    # Recup données
     url = arguments[0]
     x, y = coordLibres()
-    gestionTableau.append((x, y))
+    # Création d'un objet image
+    new_img = Image(x, y, url, time.time())
+    # Ajout de l'image dans le tableau
+    gestionTableau.addImgToList(new_img)
+    # Renvoie les coordonées x, y et url
     arguments_list = (url, x, y)
     igs.service_call("StableDiffusion", "send_x_y", arguments_list, "")
+
 
 def coordLibres():
     global gestionTableau
@@ -38,17 +35,27 @@ def coordLibres():
         x = 100.0
         y = 100.0
     else:
-        last_x, last_y = gestionTableau[-1]
-        x = last_x + spacing_h + image_width
+        last_x, last_y, _ = gestionTableau[-1]
+        x = last_x + gestionTableau.spacing_h + gestionTableau.image_width
         y = last_y
-        if (x + image_width) > tab_length:
+        if (x + gestionTableau.image_width) > gestionTableau.tab_length:
             x = 100.0
-            y = y + spacing_v + image_height
-            if (y + image_height) > tab_height:
+            y = y + gestionTableau.spacing_v + gestionTableau.image_height
+            if (y + gestionTableau.image_height) > gestionTableau.tab_height:
                 igs.service_call("Whiteboard", "clear", (), "")
                 x = 100.0
                 y = 100.0
     return x, y
+
+def checkTimeout():
+    listTimeOut = []
+    for img in gestionTableau.listImages:
+        if isinstance(img, Image):
+            if time.time() - img.start_time > gestionTableau.timeout:
+                listTimeOut.append(img)
+        else:
+            print("Error")
+    return listTimeOut
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
@@ -67,8 +74,7 @@ if __name__ == "__main__":
 
     igs.service_init("placeLibre", service_callback, None)
     igs.service_arg_add("placeLibre", "url", igs.STRING_T)
-    igs.input_create("lastAction", igs.STRING_T, None)
-    igs.observe_input("lastAction", input_callback, None)
+
     igs.start_with_device(sys.argv[2], int(sys.argv[3]))
 
     input()
