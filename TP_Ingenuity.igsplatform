@@ -418,7 +418,13 @@
                     {
                         "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
                         "hostname": "Dams",
-                        "ipAddress": "172.17.55.171",
+                        "ipAddress": "192.168.1.60",
+                        "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
+                        "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
+                        "hostname": "Dams",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
@@ -435,9 +441,9 @@
                 "view": {
                     "height": 40,
                     "isCollapsed": false,
-                    "positionX": 938,
-                    "positionY": 101,
-                    "positionZ": 4.479999999999948,
+                    "positionX": 922,
+                    "positionY": 40,
+                    "positionZ": 5.219999999999932,
                     "width": 252
                 }
             },
@@ -487,6 +493,11 @@
                                 }
                             ],
                             "name": "send_x_y"
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "ReFreshTab"
                         }
                     ],
                     "version": "1.0"
@@ -496,16 +507,16 @@
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Stable API\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "172.17.55.171",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     }
                 ],
                 "view": {
                     "height": 40,
                     "isCollapsed": false,
-                    "positionX": 1439,
-                    "positionY": 15,
-                    "positionZ": 4.239999999999953,
+                    "positionX": 1323,
+                    "positionY": 36,
+                    "positionZ": 4.759999999999942,
                     "width": 252
                 }
             },
@@ -516,11 +527,6 @@
                     "description": "",
                     "family": "",
                     "inputs": [
-                        {
-                            "description": "",
-                            "name": "lastAction",
-                            "type": "STRING"
-                        }
                     ],
                     "isDynamic": false,
                     "name": "GestionCoordonnes",
@@ -552,6 +558,29 @@
                                     "name": "send_x_y"
                                 }
                             ]
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "url",
+                                    "type": "STRING"
+                                }
+                            ],
+                            "name": "addImageToTab"
+                        },
+                        {
+                            "arguments": [
+                            ],
+                            "name": "displayAll"
+                        },
+                        {
+                            "arguments": [
+                                {
+                                    "name": "elementID",
+                                    "type": "INTEGER"
+                                }
+                            ],
+                            "name": "elementCreated"
                         }
                     ],
                     "version": "1.0"
@@ -559,18 +588,24 @@
                 "identity": "GestionCoordonnes",
                 "instances": [
                     {
-                        "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Stable API\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
+                        "commandLine": "\"C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe\" --port 0 --name GestionCoordonnes",
                         "hostname": "Dams",
-                        "ipAddress": "172.17.55.171",
+                        "ipAddress": "192.168.1.60",
+                        "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
+                        "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Stable API\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
+                        "hostname": "Dams",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     }
                 ],
                 "view": {
                     "height": 40,
                     "isCollapsed": false,
-                    "positionX": 1434,
-                    "positionY": 198,
-                    "positionZ": 4.519999999999947,
+                    "positionX": 1325,
+                    "positionY": 255,
+                    "positionZ": 5.0699999999999354,
                     "width": 252
                 }
             }
@@ -595,22 +630,10 @@
                 "toOutput": "value"
             },
             {
-                "fromAgent": "GestionCoordonnes",
-                "fromInput": "lastAction",
-                "toAgent": "Whiteboard",
-                "toOutput": "lastAction"
-            },
-            {
                 "fromAgent": "65cd0f6e-02bd-4ee0-9f8e-796f2df531ae",
                 "fromInput": "wildcard",
                 "toAgent": "StableDiffusion",
                 "toOutput": "url-image"
-            },
-            {
-                "fromAgent": "ae8b7bc5-aa10-47ad-8ba3-d5b292d02b52",
-                "fromInput": "wildcard",
-                "toAgent": "Whiteboard",
-                "toOutput": "lastAction"
             }
         ],
         "splits": [
@@ -653,9 +676,9 @@
                 "view": {
                     "height": 52,
                     "isCollapsed": false,
-                    "positionX": 489,
-                    "positionY": 107,
-                    "positionZ": 4.5499999999999465,
+                    "positionX": 471,
+                    "positionY": 43,
+                    "positionZ": 5.399999999999928,
                     "width": 256
                 }
             },
@@ -694,9 +717,9 @@
                 "view": {
                     "height": 137,
                     "isCollapsed": false,
-                    "positionX": 908,
-                    "positionY": -137,
-                    "positionZ": 4.539999999999947,
+                    "positionX": 910,
+                    "positionY": 237,
+                    "positionZ": 5.389999999999929,
                     "width": 286
                 }
             },
@@ -729,24 +752,20 @@
                 "view": {
                     "height": 156,
                     "isCollapsed": false,
-                    "positionX": 1859,
-                    "positionY": 50,
-                    "positionZ": 4.39999999999995,
+                    "positionX": 1758,
+                    "positionY": 15,
+                    "positionZ": 4.8799999999999395,
                     "width": 254
                 }
             },
             {
                 "data": {
+                    "selectedAgent": "GestionCoordonnes"
                 },
                 "definition": {
                     "description": "",
-                    "family": "7fc274c8-b06e-429b-9d09-d14878381016",
+                    "family": "7fc274c8-b06e-548p-9d09-d147878381016",
                     "inputs": [
-                        {
-                            "description": "",
-                            "name": "wildcard",
-                            "type": "WILDCARD_SINGLE_MAPPING"
-                        }
                     ],
                     "isDynamic": false,
                     "name": "",
@@ -758,16 +777,47 @@
                     ],
                     "version": ""
                 },
-                "identity": "ae8b7bc5-aa10-47ad-8ba3-d5b292d02b52",
+                "identity": "34e883f7-84af-498b-8f88-87c0758c7677",
                 "instances": [
                 ],
                 "view": {
-                    "height": 99,
+                    "height": 395,
                     "isCollapsed": false,
-                    "positionX": 1426,
-                    "positionY": 344,
-                    "positionZ": 4.529999999999947,
-                    "width": 402
+                    "positionX": 1583,
+                    "positionY": 455,
+                    "positionZ": 5.369999999999929,
+                    "width": 499
+                }
+            },
+            {
+                "data": {
+                    "selectedAgent": "StableDiffusion"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "7fc274c8-b06e-548p-9d09-d147878381016",
+                    "inputs": [
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "f4b7c5e6-d19c-4003-b5e5-c7105a4bb514",
+                "instances": [
+                ],
+                "view": {
+                    "height": 429,
+                    "isCollapsed": false,
+                    "positionX": 938,
+                    "positionY": 426,
+                    "positionZ": 5.359999999999929,
+                    "width": 611
                 }
             }
         ]
