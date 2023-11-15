@@ -3,20 +3,30 @@ import time
 
 
 class TabImages:
-    def __init__(self, images=None):
+    def __init__(self, images=None,
+                 x_init=100.0,
+                 y_init=100.0,
+                 image_width=350.0,
+                 image_height=350.0,
+                 tab_width=1200.0,
+                 tab_height=900.0,
+                 spacing_h=10.0,
+                 spacing_v=10.0,
+                 timeout=60.0):
+
         if images is None:
             self.listImages = []
         else:
             self.listImages = images
-        self.x_init = 100.0
-        self.y_init = 100.0
-        self.image_width = 350.0
-        self.image_height = 350.0
-        self.tab_width = 1200.0
-        self.tab_height = 900.0
-        self.spacing_h = 10.0
-        self.spacing_v = 10.0
-        self.timeout = 30.0  # seconds
+        self.x_init = x_init
+        self.y_init = y_init
+        self.image_width = image_width
+        self.image_height = image_height
+        self.tab_width = tab_width
+        self.tab_height = tab_height
+        self.spacing_h = spacing_h
+        self.spacing_v = spacing_v
+        self.timeout = timeout  # seconds
 
     def addImgToList(self, image):
         self.listImages.append(image)
@@ -39,7 +49,7 @@ class TabImages:
         y = self.y_init
         for y in range(int(self.y_init), int(self.tab_height), int(self.spacing_v) + int(self.image_height)):
             for x in range(int(self.x_init), int(self.tab_width), int(self.spacing_h) + int(self.image_width)):
-                listPla.append((x+0.0, y+0.0))
+                listPla.append((x + 0.0, y + 0.0))
         return listPla
 
     def isFree(self, x, y):

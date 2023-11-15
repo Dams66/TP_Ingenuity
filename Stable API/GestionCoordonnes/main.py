@@ -13,7 +13,9 @@ import time
 import sys
 import ingescape as igs
 
-gestionTableau = TabImages()
+gestionTableau = TabImages(x_init=50.0, y_init=50.0, image_width=250.0, image_height=250.0, tab_width=1100.0,
+                           tab_height=650.0, spacing_h=10.0, spacing_v=10.0, timeout=60.0)
+
 
 def service_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     # Recup données
@@ -24,14 +26,19 @@ def service_callback(sender_agent_name, sender_agent_uuid, service_name, argumen
     # Ajout de l'image dans le tableau
     gestionTableau.addImgToList(new_img)
 
-#Service pour afficher les images contenues dans la liste
+
+# Service pour afficher les images contenues dans la liste
 def service_callback2(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     gestionTableau.deleteTimeout()
     igs.service_call("Whiteboard", "clear", (), "")
     for img in gestionTableau.listImages:
         argument_list = (img.url, img.x, img.y)
         igs.service_call("Whiteboard", "addImageFromUrl", argument_list, "")
-    igs.service_call("GestionTemporelle", "refreshImg", (), "")
+    igs.service_call("StableDiffusion", "ReFreshTab", (), "")
+
+
+def service_callback3(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
+    return 1
 
 
 if __name__ == "__main__":
@@ -53,6 +60,9 @@ if __name__ == "__main__":
     igs.service_arg_add("addImageToTab", "url", igs.STRING_T)
 
     igs.service_init("displayAll", service_callback2, None)
+
+    igs.service_init("elementCreated", service_callback3, None)
+    igs.service_arg_add("elementCreated", "elementID", igs.INTEGER_T)
 
     igs.start_with_device(sys.argv[2], int(sys.argv[3]))
 
