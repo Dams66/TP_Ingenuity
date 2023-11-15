@@ -428,6 +428,12 @@
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
+                        "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Code\\Whiteboard\\main.py Whiteboard Wi-Fi 5670",
+                        "hostname": "Dams",
+                        "ipAddress": "192.168.1.60",
+                        "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
                         "commandLine": "\"C:\\Users\\pierr\\Downloads\\Whiteboard (1)\\Whiteboard\\Whiteboard.exe\" --port 5670 --device Wi-Fi",
                         "hostname": "GLaDOS",
                         "ipAddress": "172.17.63.245"
@@ -605,7 +611,7 @@
                     "isCollapsed": false,
                     "positionX": 1325,
                     "positionY": 255,
-                    "positionZ": 5.0699999999999354,
+                    "positionZ": 5.419999999999928,
                     "width": 252
                 }
             }

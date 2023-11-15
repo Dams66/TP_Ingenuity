@@ -1,3 +1,4 @@
 @echo off
-py Code\StableDiffusion\main.py -agent_name StableDiffusion -network_device Wi-Fi -port 5670
-py Code\GestionCoordonnes\main.py -agent_name GestionCoordonnes -network_device Wi-Fi -port 5670
+python3 \Code\Whiteboard\main.py Whiteboard Wi-Fi 5670
+python3 \Code\GestionCoordonnes\main.py GestionCoordonnes Wi-Fi 5670
+python3 \Code\StableDiffusion\main.py StableDiffusion Wi-Fi 5670
