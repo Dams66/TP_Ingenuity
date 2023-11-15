@@ -515,6 +515,12 @@
                         "hostname": "Dams",
                         "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
+                        "commandLine": "C:\\Users\\damss\\ansel\\anaconda3\\envs\\Stable_API_3_10\\python.exe Code\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
+                        "hostname": "Dams",
+                        "ipAddress": "192.168.1.60",
+                        "mac": "DC:46:28:64:AE:1F"
                     }
                 ],
                 "view": {
@@ -604,6 +610,12 @@
                         "hostname": "Dams",
                         "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
+                        "commandLine": "C:\\Users\\damss\\ansel\\anaconda3\\envs\\Stable_API_3_10\\python.exe Code\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
+                        "hostname": "Dams",
+                        "ipAddress": "192.168.1.60",
+                        "mac": "DC:46:28:64:AE:1F"
                     }
                 ],
                 "view": {
@@ -684,7 +696,7 @@
                     "isCollapsed": false,
                     "positionX": 471,
                     "positionY": 43,
-                    "positionZ": 5.399999999999928,
+                    "positionZ": 5.439999999999928,
                     "width": 256
                 }
             },
@@ -725,7 +737,7 @@
                     "isCollapsed": false,
                     "positionX": 910,
                     "positionY": 237,
-                    "positionZ": 5.389999999999929,
+                    "positionZ": 5.429999999999928,
                     "width": 286
                 }
             },
