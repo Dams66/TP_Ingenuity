@@ -14,23 +14,28 @@ On your environment you should have :
 python3 -m pip install ingescape
 ```
 
+* Requests
+```bash
+python3 -m pip install requests
+```
+
 ## Run
 
 There are 3 main.py to launch :
 
 * WhiteBoard -->
 ```bash
-python3 \Code\Whiteboard\main.py Whiteboard Wi-Fi 5670
+python3 Code\Whiteboard\main.py Whiteboard Wi-Fi 5670
 ```
 
 * GestionCoordonnes -->
 ```bash
-python3 \Code\GestionCoordonnes\main.py GestionCoordonnes Wi-Fi 5670
+python3 Code\GestionCoordonnes\main.py GestionCoordonnes Wi-Fi 5670
 ```
 
 * StableDiffusion -->
 ```bash
-python3 \Code\StableDiffusion\main.py StableDiffusion Wi-Fi 5670
+python3 Code\StableDiffusion\main.py StableDiffusion Wi-Fi 5670
 ```
 
 ## Launch ingescape circle
