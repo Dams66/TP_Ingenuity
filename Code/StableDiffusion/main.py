@@ -14,35 +14,43 @@ import time
 import json
 import requests
 
-timeBetweenRefresh = 10 # 10 secondes
-listRandomIMG = ["https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/ba818405-efeb-473f-b2e1-3fd37f551ca5-0.png",
-                 "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/ba818405-efeb-473f-b2e1-3fd37f551ca5-0.png"]
+timeBetweenRefresh = 10  # 10 secondes
+listRandomIMG = [
+    "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/ba818405-efeb-473f-b2e1-3fd37f551ca5-0.png",
+    "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/ba818405-efeb-473f-b2e1-3fd37f551ca5-0.png"]
 apiKey = None
 first = True
+
+
 # inputs
 def input_callback(iop_type, name, value_type, value, my_data):
     global first
     if apiKey is not None:
-        #url = text2img(value, apiKey)
+        # url = text2img(value, apiKey)
         url = randomIMG()
         igs.output_set_string("url-image", url)
 
-        #Récupération des coordonnées libres
+        # Récupération des coordonnées libres
         argument_list = (url,)
         igs.service_call("GestionCoordonnes", "addImageToTab", argument_list, "")
         if first:
             igs.service_call("GestionCoordonnes", "displayAll", (), "")
             first = False
+
+
 def input_callback_2(iop_type, name, value_type, value, my_data):
     global apiKey
     apiKey = value
+
 
 def service_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     time.sleep(timeBetweenRefresh)
     igs.service_call("GestionCoordonnes", "displayAll", (), "")
 
+
 def randomIMG():
     return random.choice(listRandomIMG)
+
 
 def text2img(prompt, cle):
     url = "https://stablediffusionapi.com/api/v3/text2img"
@@ -75,7 +83,8 @@ def text2img(prompt, cle):
     output_link = json_response.get("output", [])[0]
 
     return output_link
-    #return "https://cdn2.stablediffusionapi.com/generations/4254c80e-3d30-490f-b3ed-efd92c29f9c1-0.png"
+    # return "https://cdn2.stablediffusionapi.com/generations/4254c80e-3d30-490f-b3ed-efd92c29f9c1-0.png"
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
