@@ -43,6 +43,10 @@ def input_callback_2(iop_type, name, value_type, value, my_data):
     global apiKey
     apiKey = value
 
+def input_callback_3(iop_type, name, value_type, value, my_data):
+    global timeBetweenRefresh
+    timeBetweenRefresh = value
+
 
 def service_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     time.sleep(timeBetweenRefresh)
@@ -106,11 +110,13 @@ if __name__ == "__main__":
 
     igs.input_create("prompt", igs.STRING_T, None)
     igs.input_create("cle_API", igs.STRING_T, None)
+    igs.input_create("Refresh_Rate", igs.INTEGER_T, None)
 
     igs.output_create("url-image", igs.STRING_T, None)
 
     igs.observe_input("prompt", input_callback, None)
     igs.observe_input("cle_API", input_callback_2, None)
+    igs.observe_input("Refresh_Rate", input_callback_3, None)
 
     igs.start_with_device(sys.argv[2], int(sys.argv[3]))
 

@@ -418,19 +418,19 @@
                     {
                         "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Code\\Whiteboard\\main.py Whiteboard Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
@@ -479,6 +479,11 @@
                             "description": "",
                             "name": "cle_API",
                             "type": "STRING"
+                        },
+                        {
+                            "description": "",
+                            "name": "Refresh_Rate",
+                            "type": "INTEGER"
                         }
                     ],
                     "isDynamic": false,
@@ -523,13 +528,13 @@
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Stable API\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\ansel\\anaconda3\\envs\\Stable_API_3_10\\python.exe Code\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
@@ -541,9 +546,9 @@
                 "view": {
                     "height": 40,
                     "isCollapsed": false,
-                    "positionX": 1323,
-                    "positionY": 36,
-                    "positionZ": 4.759999999999942,
+                    "positionX": 1376,
+                    "positionY": 128,
+                    "positionZ": 5.969999999999916,
                     "width": 252
                 }
             },
@@ -554,6 +559,16 @@
                     "description": "",
                     "family": "",
                     "inputs": [
+                        {
+                            "description": "",
+                            "name": "Ordering",
+                            "type": "BOOL"
+                        },
+                        {
+                            "description": "",
+                            "name": "Timeout_image",
+                            "type": "INTEGER"
+                        }
                     ],
                     "isDynamic": false,
                     "name": "GestionCoordonnes",
@@ -617,19 +632,19 @@
                     {
                         "commandLine": "\"C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe\" --port 0 --name GestionCoordonnes",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Stable API\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\ansel\\anaconda3\\envs\\Stable_API_3_10\\python.exe Code\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "169.254.88.31",
+                        "ipAddress": "192.168.1.60",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
@@ -641,9 +656,9 @@
                 "view": {
                     "height": 40,
                     "isCollapsed": false,
-                    "positionX": 1325,
-                    "positionY": 255,
-                    "positionZ": 5.419999999999928,
+                    "positionX": 1374,
+                    "positionY": 324,
+                    "positionZ": 5.879999999999918,
                     "width": 252
                 }
             }
@@ -672,6 +687,24 @@
                 "fromInput": "wildcard",
                 "toAgent": "StableDiffusion",
                 "toOutput": "url-image"
+            },
+            {
+                "fromAgent": "GestionCoordonnes",
+                "fromInput": "Ordering",
+                "toAgent": "3f0522b3-471a-4c7f-addf-f1c0352a8512",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "GestionCoordonnes",
+                "fromInput": "Timeout_image",
+                "toAgent": "1908863b-4334-4c37-a50a-e76678cd4779",
+                "toOutput": "value"
+            },
+            {
+                "fromAgent": "StableDiffusion",
+                "fromInput": "Refresh_Rate",
+                "toAgent": "23bc161a-6f62-4829-8919-13dadabd8d65",
+                "toOutput": "value"
             }
         ],
         "splits": [
@@ -712,12 +745,12 @@
                 "instances": [
                 ],
                 "view": {
-                    "height": 52,
+                    "height": 217,
                     "isCollapsed": false,
-                    "positionX": 471,
-                    "positionY": 43,
-                    "positionZ": 5.4899999999999265,
-                    "width": 256
+                    "positionX": 454,
+                    "positionY": -29,
+                    "positionZ": 6.009999999999915,
+                    "width": 293
                 }
             },
             {
@@ -753,12 +786,12 @@
                 "instances": [
                 ],
                 "view": {
-                    "height": 137,
+                    "height": 109,
                     "isCollapsed": false,
-                    "positionX": 910,
-                    "positionY": 237,
-                    "positionZ": 5.479999999999927,
-                    "width": 286
+                    "positionX": 453,
+                    "positionY": 205,
+                    "positionZ": 5.979999999999916,
+                    "width": 295
                 }
             },
             {
@@ -790,9 +823,9 @@
                 "view": {
                     "height": 156,
                     "isCollapsed": false,
-                    "positionX": 1758,
-                    "positionY": 15,
-                    "positionZ": 4.8799999999999395,
+                    "positionX": 1752,
+                    "positionY": 115,
+                    "positionZ": 5.899999999999918,
                     "width": 254
                 }
             },
@@ -819,12 +852,12 @@
                 "instances": [
                 ],
                 "view": {
-                    "height": 430,
+                    "height": 239,
                     "isCollapsed": false,
-                    "positionX": 1489,
-                    "positionY": 397,
-                    "positionZ": 5.469999999999927,
-                    "width": 527
+                    "positionX": 1483,
+                    "positionY": 600,
+                    "positionZ": 5.949999999999917,
+                    "width": 518
                 }
             },
             {
@@ -850,12 +883,135 @@
                 "instances": [
                 ],
                 "view": {
-                    "height": 429,
+                    "height": 236,
                     "isCollapsed": false,
-                    "positionX": 873,
-                    "positionY": 397,
-                    "positionZ": 5.459999999999927,
-                    "width": 611
+                    "positionX": 920,
+                    "positionY": 601,
+                    "positionZ": 5.939999999999917,
+                    "width": 516
+                }
+            },
+            {
+                "data": {
+                    "entry 0": "false"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "BOOL"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "3f0522b3-471a-4c7f-addf-f1c0352a8512",
+                "instances": [
+                ],
+                "view": {
+                    "height": 72,
+                    "isCollapsed": false,
+                    "positionX": 455,
+                    "positionY": 445,
+                    "positionZ": 5.849999999999919,
+                    "width": 292
+                }
+            },
+            {
+                "data": {
+                    "entry 0": "90"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "1908863b-4334-4c37-a50a-e76678cd4779",
+                "instances": [
+                ],
+                "view": {
+                    "height": 79,
+                    "isCollapsed": false,
+                    "positionX": 456,
+                    "positionY": 525,
+                    "positionZ": 6.029999999999915,
+                    "width": 291
+                }
+            },
+            {
+                "data": {
+                    "entry 0": "10"
+                },
+                "definition": {
+                    "description": "",
+                    "family": "fbba66d6-8d60-4694-b5fa-63b6f3f51e63",
+                    "inputs": [
+                        {
+                            "description": "",
+                            "name": "trigger",
+                            "type": "IMPULSION"
+                        }
+                    ],
+                    "isDynamic": false,
+                    "name": "",
+                    "outputs": [
+                        {
+                            "description": "",
+                            "name": "value",
+                            "type": "INTEGER"
+                        }
+                    ],
+                    "parameters": [
+                    ],
+                    "services": [
+                    ],
+                    "version": ""
+                },
+                "identity": "23bc161a-6f62-4829-8919-13dadabd8d65",
+                "instances": [
+                ],
+                "view": {
+                    "height": 79,
+                    "isCollapsed": false,
+                    "positionX": 454,
+                    "positionY": 334,
+                    "positionZ": 6.039999999999915,
+                    "width": 293
                 }
             }
         ]

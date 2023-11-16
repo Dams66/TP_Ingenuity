@@ -14,8 +14,13 @@ import sys
 import ingescape as igs
 
 gestionTableau = TabImages(x_init=50.0, y_init=50.0, image_width=250.0, image_height=250.0, tab_width=1100.0,
-                           tab_height=650.0, spacing_h=10.0, spacing_v=10.0, timeout=60.0)
+                           tab_height=650.0, spacing_h=10.0, spacing_v=10.0, ordering=True, timeout=90.0)
 
+
+def input_callback(iop_type, name, value_type, value, my_data):
+    gestionTableau.ordering = value
+def input_callback_2(iop_type, name, value_type, value, my_data):
+    gestionTableau.timeout = value
 
 def service_callback(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     # Recup données
@@ -31,6 +36,7 @@ def service_callback(sender_agent_name, sender_agent_uuid, service_name, argumen
 def service_callback2(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     gestionTableau.deleteTimeout()
     igs.service_call("Whiteboard", "clear", (), "")
+    gestionTableau.order()
     for img in gestionTableau.listImages:
         argument_list = (img.url, img.x, img.y)
         igs.service_call("Whiteboard", "addImageFromUrl", argument_list, "")
@@ -55,6 +61,12 @@ if __name__ == "__main__":
     igs.log_set_console(True)
     igs.log_set_file(True, None)
     igs.set_command_line(sys.executable + " " + " ".join(sys.argv))
+
+    igs.input_create("Ordering", igs.BOOL_T, None)
+    igs.input_create("Timeout_image", igs.INTEGER_T, None)
+
+    igs.observe_input("Ordering", input_callback, None)
+    igs.observe_input("Timeout_image", input_callback_2, None)
 
     igs.service_init("addImageToTab", service_callback, None)
     igs.service_arg_add("addImageToTab", "url", igs.STRING_T)

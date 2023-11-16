@@ -12,6 +12,7 @@ class TabImages:
                  tab_height=900.0,
                  spacing_h=10.0,
                  spacing_v=10.0,
+                 ordering=True,
                  timeout=60.0):
 
         if images is None:
@@ -26,6 +27,7 @@ class TabImages:
         self.tab_height = tab_height
         self.spacing_h = spacing_h
         self.spacing_v = spacing_v
+        self.ordering = ordering
         self.timeout = timeout  # seconds
 
     def addImgToList(self, image):
@@ -68,10 +70,29 @@ class TabImages:
             for (x, y) in listPlace:
                 if self.isFree(x, y):
                     return x, y
-            self.removeImgToList(self.getImageFromCoord(self.x_init, self.y_init))
-            x = self.x_init
-            y = self.y_init
+            older = self.getOlderImage()
+            self.removeImgToList(older)
+            x = older.x
+            y = older.y
         return x, y
+
+    def getOlderImage(self):
+        older = self.listImages[-1]
+        for img in self.listImages:
+            if img.start_time < older.start_time:
+                older = img
+        return older
+
+    def order(self):
+        if self.ordering is True:
+            sorted_images = sorted(self.listImages, key=lambda im: im.start_time)
+            places = self.getAllPlaces()
+            cpt = 0
+            for image in sorted_images:
+                (x, y) = places[cpt]
+                image.x = x
+                image.y = y
+                cpt += 1
 
     def checkTimeout(self):
         listTimeOut = []
