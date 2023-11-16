@@ -17,7 +17,8 @@ import requests
 timeBetweenRefresh = 10  # 10 secondes
 listRandomIMG = [
     "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/ba818405-efeb-473f-b2e1-3fd37f551ca5-0.png",
-    "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/ba818405-efeb-473f-b2e1-3fd37f551ca5-0.png"]
+    "https://cdn2.stablediffusionapi.com/generations/f57c1d16-8d14-4dc1-a1b5-e8db5d8614b3-0.png",
+    "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/94a92db0-97f4-4764-ab35-d938a06879dd-0.png"]
 apiKey = None
 first = True
 
