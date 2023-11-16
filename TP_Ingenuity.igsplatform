@@ -418,19 +418,19 @@
                     {
                         "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "\"C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Whiteboard\\Whiteboard\\Whiteboard.exe\"",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Code\\Whiteboard\\main.py Whiteboard Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
@@ -440,6 +440,16 @@
                     },
                     {
                         "commandLine": "C:\\Users\\quent\\Downloads\\Whiteboard\\Whiteboard\\Whiteboard.exe --device Wi-Fi",
+                        "hostname": "LAPTOP-5NTFSMGI",
+                        "ipAddress": "169.254.91.11"
+                    },
+                    {
+                        "commandLine": "C:\\Users\\quent\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe Code\\Whiteboard\\main.py Whiteboard Wi-Fi 5670",
+                        "hostname": "LAPTOP-5NTFSMGI",
+                        "ipAddress": "169.254.91.11"
+                    },
+                    {
+                        "commandLine": "C:\\Users\\quent\\Downloads\\TP_Ingenuity-main\\TP_Ingenuity-main\\Whiteboard\\Whiteboard\\Whiteboard.exe --device Wi-Fi --port 5670",
                         "hostname": "LAPTOP-5NTFSMGI",
                         "ipAddress": "169.254.91.11"
                     }
@@ -513,14 +523,19 @@
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\Stable API\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\ansel\\anaconda3\\envs\\Stable_API_3_10\\python.exe Code\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
+                        "commandLine": "C:\\Users\\quent\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe Code\\StableDiffusion\\main.py StableDiffusion Wi-Fi 5670",
+                        "hostname": "LAPTOP-5NTFSMGI",
+                        "ipAddress": "169.254.91.11"
                     }
                 ],
                 "view": {
@@ -602,20 +617,25 @@
                     {
                         "commandLine": "\"C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe\" --port 0 --name GestionCoordonnes",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\anaconda3\\envs\\Stable_API_3_10\\python.exe C:\\Users\\damss\\OneDrive\\Bureau\\UPSSITECH\\3A\\Interaction distribuee\\TP_Ingenuity\\Stable API\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
                     },
                     {
                         "commandLine": "C:\\Users\\damss\\ansel\\anaconda3\\envs\\Stable_API_3_10\\python.exe Code\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
                         "hostname": "Dams",
-                        "ipAddress": "192.168.1.60",
+                        "ipAddress": "169.254.88.31",
                         "mac": "DC:46:28:64:AE:1F"
+                    },
+                    {
+                        "commandLine": "C:\\Users\\quent\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\\python.exe Code\\GestionCoordonnes\\main.py GestionCoordonnes Wi-Fi 5670",
+                        "hostname": "LAPTOP-5NTFSMGI",
+                        "ipAddress": "169.254.91.11"
                     }
                 ],
                 "view": {
@@ -696,7 +716,7 @@
                     "isCollapsed": false,
                     "positionX": 471,
                     "positionY": 43,
-                    "positionZ": 5.439999999999928,
+                    "positionZ": 5.4899999999999265,
                     "width": 256
                 }
             },
@@ -737,7 +757,7 @@
                     "isCollapsed": false,
                     "positionX": 910,
                     "positionY": 237,
-                    "positionZ": 5.429999999999928,
+                    "positionZ": 5.479999999999927,
                     "width": 286
                 }
             },
@@ -799,12 +819,12 @@
                 "instances": [
                 ],
                 "view": {
-                    "height": 395,
+                    "height": 430,
                     "isCollapsed": false,
-                    "positionX": 1583,
-                    "positionY": 455,
-                    "positionZ": 5.369999999999929,
-                    "width": 499
+                    "positionX": 1489,
+                    "positionY": 397,
+                    "positionZ": 5.469999999999927,
+                    "width": 527
                 }
             },
             {
@@ -832,9 +852,9 @@
                 "view": {
                     "height": 429,
                     "isCollapsed": false,
-                    "positionX": 938,
-                    "positionY": 426,
-                    "positionZ": 5.359999999999929,
+                    "positionX": 873,
+                    "positionY": 397,
+                    "positionZ": 5.459999999999927,
                     "width": 611
                 }
             }

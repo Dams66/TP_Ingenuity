@@ -25,7 +25,7 @@ There are 3 main.py to launch :
 
 * WhiteBoard -->
 ```bash
-python3 Code\Whiteboard\main.py Whiteboard Wi-Fi 5670
+.\Whiteboard\Whiteboard\Whiteboard.exe --device Wi-Fi --port SSSSS5670
 ```
 
 * GestionCoordonnes -->
