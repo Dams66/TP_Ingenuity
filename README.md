@@ -21,11 +21,11 @@ python3 -m pip install requests
 
 ## Run
 
-There are 3 main.py to launch :
+There are 2 ".py" and 1 ".exe" to launch :
 
 * WhiteBoard -->
 ```bash
-.\Whiteboard\Whiteboard\Whiteboard.exe --device Wi-Fi --port SSSSS5670
+.\Whiteboard\Whiteboard\Whiteboard.exe --device Wi-Fi --port 5670
 ```
 
 * GestionCoordonnes -->
