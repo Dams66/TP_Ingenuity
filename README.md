@@ -38,6 +38,6 @@ python3 Code\GestionCoordonnes\main.py GestionCoordonnes Wi-Fi 5670
 python3 Code\StableDiffusion\main.py StableDiffusion Wi-Fi 5670
 ```
 
-## Launch Ingescape circle
+## Launch Ingescape Circle
 
 Open the projet "TP_Ingenuity" located on the main folder and verify that WhiteBoard, GestionCoordonnes and StableDiffusion are running
