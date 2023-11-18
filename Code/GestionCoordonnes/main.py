@@ -36,7 +36,7 @@ def service_callback(sender_agent_name, sender_agent_uuid, service_name, argumen
 def service_callback2(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     gestionTableau.deleteTimeout()
     igs.service_call("Whiteboard", "clear", (), "")
-    igs.service_call("Whiteboard", "addImageFromUrl", ("", 75.0, 75.0), "")
+    igs.service_call("Whiteboard", "addImageFromUrl", ("https://github.com/Dams66/TP_Ingenuity/blob/main/Code/GestionCoordonnes/Cadre.png?raw=true", 75.0, 75.0), "")
     gestionTableau.order()
     for img in gestionTableau.listImages:
         argument_list = (img.url, img.x, img.y)
