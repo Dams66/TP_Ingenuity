@@ -27,8 +27,10 @@ first = True
 def input_callback(iop_type, name, value_type, value, my_data):
     global first
     if apiKey is not None:
-        # url = text2img(value, apiKey)
-        url = randomIMG()
+        if value.lower() == "random":
+            url = randomIMG()
+        else:
+            url = text2img(value, apiKey)
         igs.output_set_string("url-image", url)
 
         # Récupération des coordonnées libres
