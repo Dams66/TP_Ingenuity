@@ -3,7 +3,7 @@
 "Documentation.pdf" --> PROJECT MANUAL.
 
 ## Prerequisites
-* Python3 (https://www.python.org/downloads/)
+* Python 3.10.13 (https://www.python.org/downloads/)
 
 ## Install dependencies
 
