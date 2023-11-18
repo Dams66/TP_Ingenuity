@@ -44,7 +44,7 @@ def input_callback(iop_type, name, value_type, value, my_data):
             url = text2img(value, apiKey)
             urlResized = resizeAndUpload(200, 200, url, clientID)
 
-        if urlResized != "" and not None:
+        if (urlResized != "") and (urlResized is not None):
             igs.output_set_string("url-image", urlResized)
             # Récupération des coordonnées libres
             argument_list = (urlResized,)
