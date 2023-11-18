@@ -33,12 +33,13 @@ def input_callback(iop_type, name, value_type, value, my_data):
             url = text2img(value, apiKey)
         igs.output_set_string("url-image", url)
 
-        # Récupération des coordonnées libres
-        argument_list = (url,)
-        igs.service_call("GestionCoordonnes", "addImageToTab", argument_list, "")
-        if first:
-            igs.service_call("GestionCoordonnes", "displayAll", (), "")
-            first = False
+        if url != "":
+            # Récupération des coordonnées libres
+            argument_list = (url,)
+            igs.service_call("GestionCoordonnes", "addImageToTab", argument_list, "")
+            if first:
+                igs.service_call("GestionCoordonnes", "displayAll", (), "")
+                first = False
 
 
 def input_callback_2(iop_type, name, value_type, value, my_data):
@@ -83,15 +84,15 @@ def text2img(prompt, cle):
     headers = {
         'Content-Type': 'application/json'
     }
-    response = requests.request("POST", url, headers=headers, data=payload)
-
-    json_response = json.loads(response.text)
-
-    output_link = json_response.get("output", [])[0]
-
-    return output_link
-    # return "https://cdn2.stablediffusionapi.com/generations/4254c80e-3d30-490f-b3ed-efd92c29f9c1-0.png"
-
+    try:
+        response = requests.post(url, headers=headers, data=payload)
+        response.raise_for_status()  # Lève une exception pour les codes d'erreur HTTP
+        json_response = response.json()
+        output_link = json_response.get("output", [])[0]
+        return output_link
+    except requests.exceptions.RequestException as e:
+        print(f"Une erreur s'est produite lors de la requête : {e}")
+        return ""
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
