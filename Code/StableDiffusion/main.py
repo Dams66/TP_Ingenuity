@@ -21,7 +21,7 @@ timeBetweenRefresh = 10  # 10 secondes
 listRandomIMG = ["https://i.imgur.com/6Pu4w3k.png",  # Elisabeth
                  "https://i.imgur.com/QnJitU0.png",  # Naruto
                  "https://i.imgur.com/hrEYqX5.png",  # Escanor
-                 "https://i.imgur.com/2G9gDMC.png",  # Café Shibuya
+                 "https://i.imgur.com/fGS95C4.png",  # Chat + plats
                  "https://i.imgur.com/XBGVFR8.png",  # Lynx
                  "https://i.imgur.com/6OkEr9k.png",  # Satoru Gojo
                  "https://i.imgur.com/BDDVb2n.png",  # Paris
