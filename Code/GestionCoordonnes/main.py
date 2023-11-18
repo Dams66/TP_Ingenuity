@@ -13,8 +13,8 @@ import time
 import sys
 import ingescape as igs
 
-gestionTableau = TabImages(x_init=50.0, y_init=50.0, image_width=250.0, image_height=250.0, tab_width=1100.0,
-                           tab_height=650.0, spacing_h=10.0, spacing_v=10.0, ordering=True, timeout=90.0)
+gestionTableau = TabImages(x_init=100.0, y_init=100.0, image_width=200.0, image_height=200.0, tab_width=1100.0,
+                           tab_height=650.0, spacing_h=25.0, spacing_v=25.0, ordering=True, timeout=90.0)
 
 
 def input_callback(iop_type, name, value_type, value, my_data):
@@ -36,6 +36,7 @@ def service_callback(sender_agent_name, sender_agent_uuid, service_name, argumen
 def service_callback2(sender_agent_name, sender_agent_uuid, service_name, arguments, token, my_data):
     gestionTableau.deleteTimeout()
     igs.service_call("Whiteboard", "clear", (), "")
+    igs.service_call("Whiteboard", "addImageFromUrl", ("", 75.0, 75.0), "")
     gestionTableau.order()
     for img in gestionTableau.listImages:
         argument_list = (img.url, img.x, img.y)
