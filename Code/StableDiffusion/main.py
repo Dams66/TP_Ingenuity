@@ -13,12 +13,23 @@ import ingescape as igs
 import time
 import json
 import requests
+from PIL import Image
+from io import BytesIO
 
+clientID = "f5ba40718baa4ba"
 timeBetweenRefresh = 10  # 10 secondes
-listRandomIMG = [
-    "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/ba818405-efeb-473f-b2e1-3fd37f551ca5-0.png",
-    "https://cdn2.stablediffusionapi.com/generations/f57c1d16-8d14-4dc1-a1b5-e8db5d8614b3-0.png",
-    "https://pub-3626123a908346a7a8be8d9295f44e26.r2.dev/generations/94a92db0-97f4-4764-ab35-d938a06879dd-0.png"]
+listRandomIMG = ["https://i.imgur.com/6Pu4w3k.png",  # Elisabeth
+                 "https://i.imgur.com/QnJitU0.png",  # Naruto
+                 "https://i.imgur.com/hrEYqX5.png",  # Escanor
+                 "https://i.imgur.com/2G9gDMC.png",  # Café Shibuya
+                 "https://i.imgur.com/XBGVFR8.png",  # Lynx
+                 "https://i.imgur.com/6OkEr9k.png",  # Satoru Gojo
+                 "https://i.imgur.com/BDDVb2n.png",  # Paris
+                 "https://i.imgur.com/UUjQV2M.png",  # Shibuya Ville
+                 "https://i.imgur.com/yaDLxy5.png",  # Loup
+                 "https://i.imgur.com/o6WF6Er.png",  # LasVegas
+                 "https://i.imgur.com/KCgP4y5.png",  # MacDo
+                 "https://i.imgur.com/eH46XVk.png"]  # Plat Gastronomique
 apiKey = None
 first = True
 
@@ -28,14 +39,15 @@ def input_callback(iop_type, name, value_type, value, my_data):
     global first
     if apiKey is not None:
         if value.lower() == "random":
-            url = randomIMG()
+            urlResized = randomIMG()
         else:
             url = text2img(value, apiKey)
-        igs.output_set_string("url-image", url)
+            urlResized = resizeAndUpload(200, 200, url, clientID)
 
-        if url != "":
+        if urlResized != "" and not None:
+            igs.output_set_string("url-image", urlResized)
             # Récupération des coordonnées libres
-            argument_list = (url,)
+            argument_list = (urlResized,)
             igs.service_call("GestionCoordonnes", "addImageToTab", argument_list, "")
             if first:
                 igs.service_call("GestionCoordonnes", "displayAll", (), "")
@@ -45,6 +57,7 @@ def input_callback(iop_type, name, value_type, value, my_data):
 def input_callback_2(iop_type, name, value_type, value, my_data):
     global apiKey
     apiKey = value
+
 
 def input_callback_3(iop_type, name, value_type, value, my_data):
     global timeBetweenRefresh
@@ -66,8 +79,8 @@ def text2img(prompt, cle):
         "key": cle,
         "prompt": prompt,
         "negative_prompt": None,
-        "width": "512",
-        "height": "512",
+        "width": "1024",
+        "height": "1024",
         "samples": "1",
         "num_inference_steps": "20",
         "seed": None,
@@ -91,8 +104,39 @@ def text2img(prompt, cle):
         output_link = json_response.get("output", [])[0]
         return output_link
     except requests.exceptions.RequestException as e:
-        print(f"Une erreur s'est produite lors de la requête : {e}")
+        print(f"Une erreur s'est produite lors de la requête Stable Diffusion: {e}")
         return ""
+
+
+def resizeAndUpload(largeur, hauteur, url, client_id):
+    try:
+        response = requests.get(url)
+        img = Image.open(BytesIO(response.content))
+        new_size = (largeur, hauteur)
+        img_resized = img.resize(new_size)
+
+        with BytesIO() as buffer:
+            img_resized.save(buffer, format="PNG")
+            image_data = buffer.getvalue()
+
+        upload_url = "https://api.imgur.com/3/image"
+        headers = {"Authorization": f"Client-ID {client_id}"}
+        files = {"image": image_data}
+
+        response = requests.post(upload_url, headers=headers, files=files)
+
+        json_response = response.json()
+
+        if response.status_code == 200 and json_response["success"]:
+            print("Image téléversée avec succès !")
+            print("URL de l'image sur Imgur:", json_response["data"]["link"])
+            return json_response["data"]["link"]
+        else:
+            print("Échec du téléversement. Réponse Imgur:", json_response)
+
+    except Exception as e:
+        print(f"Une erreur s'est produite lors du resizeAndUpload: {e}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
