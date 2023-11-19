@@ -107,7 +107,7 @@ def text2img(prompt, cle):
         print(f"Une erreur s'est produite lors de la requête Stable Diffusion: {e}")
         return ""
     except IndexError:
-        print("La réponse de StableDiffusion est vide. Cela peut etre dû au fait que la clé API n'est pas valide")
+        print("La réponse de StableDiffusion est vide. Cela peut etre dû au fait que la clé API n'est pas valide ou qu'il n'y ai plus de crédits.")
         return ""
 
 
