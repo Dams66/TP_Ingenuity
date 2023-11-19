@@ -106,6 +106,9 @@ def text2img(prompt, cle):
     except requests.exceptions.RequestException as e:
         print(f"Une erreur s'est produite lors de la requête Stable Diffusion: {e}")
         return ""
+    except IndexError:
+        print("La réponse de StableDiffusion est vide. Cela peut etre dû au fait que la clé API n'est pas valide")
+        return ""
 
 
 def resizeAndUpload(largeur, hauteur, url, client_id):
